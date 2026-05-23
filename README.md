@@ -83,6 +83,42 @@ app/build/outputs/apk/debug/app-debug.apk
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
+## GitHub Actions 自动发布
+
+仓库已经包含 GitHub Actions 工作流：
+
+`/.github/workflows/release-apk.yml`
+
+触发方式：
+
+- 推送任意 tag
+
+工作流会执行这些动作：
+
+- 配置 JDK 17
+- 安装 Android SDK 所需组件
+- 构建可安装的 `release` APK
+- 创建或复用同名 GitHub Release
+- 将 APK 上传到 Release Assets
+
+推荐的发版方式：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+发布后的资源文件名格式：
+
+```text
+touch-diagnostic-v1.0.0.apk
+```
+
+说明：
+
+- 当前 `release` APK 使用调试证书签名，目的是让 GitHub Actions 在没有私有 keystore 的情况下也能产出可直接安装的 APK
+- 如果后续需要正式签名，可以再改成从 GitHub Secrets 读取 keystore
+
 ## 使用说明
 
 ### 单指测试
