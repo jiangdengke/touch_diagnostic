@@ -43,7 +43,15 @@ jobs:
             exit 1
           fi
 
+          set +o pipefail
           yes | "${SDKMANAGER}" --licenses > /dev/null
+          LICENSE_STATUS=$?
+          set -o pipefail
+          if [ "${LICENSE_STATUS}" -ne 0 ]; then
+            echo "sdkmanager --licenses failed with status ${LICENSE_STATUS}" >&2
+            exit "${LICENSE_STATUS}"
+          fi
+
           "${SDKMANAGER}" \
             "platform-tools" \
             "platforms;android-33" \
