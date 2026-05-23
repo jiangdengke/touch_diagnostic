@@ -162,8 +162,8 @@ touch-diagnostic-v1.0.0.apk
 
 ## 已实现的核心代码
 
-- 页面入口：[app/src/main/java/com/company/touchdiagnostic/MainActivity.java](./app/src/main/java/com/company/touchdiagnostic/MainActivity.java)
-- 触控绘制与统计逻辑：[app/src/main/java/com/company/touchdiagnostic/TouchTestView.java](./app/src/main/java/com/company/touchdiagnostic/TouchTestView.java)
+- 页面入口：[app/src/main/java/com/company/touchdiagnostic/MainActivity.kt](./app/src/main/java/com/company/touchdiagnostic/MainActivity.kt)
+- 触控绘制与统计逻辑：[app/src/main/java/com/company/touchdiagnostic/TouchTestView.kt](./app/src/main/java/com/company/touchdiagnostic/TouchTestView.kt)
 
 ## 后续可扩展
 
