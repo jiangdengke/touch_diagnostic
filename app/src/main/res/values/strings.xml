@@ -2,14 +2,15 @@
 <resources>
     <string name="app_name">Touch Diagnostic</string>
     <string name="title">Touch Diagnostic</string>
-    <string name="instructions">Slowly sweep the whole screen with one finger, then test edges and corners. Repeat with two or more fingers if needed.</string>
+    <string name="instructions">Slowly sweep the whole screen with one finger, then test edges and corners. Hide the panel before checking the top area. Repeat with two or more fingers if needed.</string>
     <string name="summary_template">Pointers: %1$d   Strokes: %2$d   Events: %3$d</string>
     <string name="coverage_template">Coverage: %1$d / %2$d cells  (%3$d%%)</string>
     <string name="quality_template">Max jump: %1$.1f dp   Grid: %2$s</string>
     <string name="clear">Clear</string>
     <string name="hide_grid">Hide Grid</string>
     <string name="show_grid">Show Grid</string>
+    <string name="hide_panel">Hide Panel</string>
+    <string name="show_panel">Show Panel</string>
     <string name="grid_on">ON</string>
     <string name="grid_off">OFF</string>
 </resources>
-

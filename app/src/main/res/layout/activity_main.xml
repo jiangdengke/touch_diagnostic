@@ -11,6 +11,7 @@
         android:layout_height="match_parent" />
 
     <LinearLayout
+        android:id="@+id/infoPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -89,8 +90,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:text="@string/hide_grid" />
+
+            <Button
+                android:id="@+id/panelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/hide_panel" />
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/showPanelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="12dp"
+        android:text="@string/show_panel"
+        android:visibility="gone" />
 
+</FrameLayout>

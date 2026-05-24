@@ -1,8 +1,10 @@
 package com.company.touchdiagnostic
 
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var qualityView: TextView
     private lateinit var clearButton: Button
     private lateinit var gridButton: Button
+    private lateinit var panelButton: Button
+    private lateinit var showPanelButton: Button
+    private lateinit var infoPanel: LinearLayout
     private lateinit var touchTestView: TouchTestView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +33,9 @@ class MainActivity : AppCompatActivity() {
         qualityView = findViewById(R.id.qualityText)
         clearButton = findViewById(R.id.clearButton)
         gridButton = findViewById(R.id.gridButton)
+        panelButton = findViewById(R.id.panelButton)
+        showPanelButton = findViewById(R.id.showPanelButton)
+        infoPanel = findViewById(R.id.infoPanel)
         touchTestView = findViewById(R.id.touchView)
 
         clearButton.setOnClickListener { touchTestView.clearCanvas() }
@@ -35,9 +43,12 @@ class MainActivity : AppCompatActivity() {
             touchTestView.gridEnabled = !touchTestView.gridEnabled
             updateGridButtonLabel()
         }
+        panelButton.setOnClickListener { setPanelVisible(false) }
+        showPanelButton.setOnClickListener { setPanelVisible(true) }
 
         touchTestView.statsListener = ::renderStats
         updateGridButtonLabel()
+        setPanelVisible(true)
     }
 
     private fun updateGridButtonLabel() {
@@ -69,5 +80,10 @@ class MainActivity : AppCompatActivity() {
             stats.maxJumpDp,
             if (stats.gridEnabled) getString(R.string.grid_on) else getString(R.string.grid_off)
         )
+    }
+
+    private fun setPanelVisible(visible: Boolean) {
+        infoPanel.visibility = if (visible) View.VISIBLE else View.GONE
+        showPanelButton.visibility = if (visible) View.GONE else View.VISIBLE
     }
 }
