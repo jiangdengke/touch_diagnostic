@@ -143,7 +143,7 @@ class TouchTestView @JvmOverloads constructor(
         if (w <= 0 || h <= 0) {
             return
         }
-        cellSizePx = max(dpToPx(72f), 1)
+        cellSizePx = max(dpToPx(48f), 1)
         columns = ceil(w.toDouble() / cellSizePx.toDouble()).toInt()
         rows = ceil(h.toDouble() / cellSizePx.toDouble()).toInt()
         visitedCells = BooleanArray(columns * rows)
